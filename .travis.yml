@@ -1,14 +1,20 @@
 language : node_js
 node_js :
     - "0.12"
+    - "4"
+    - "5"
+addons:
+    apt:
+        packages:
+        - graphviz
+        - plotutils
+        - imagemagick
 python:
     - "2.7"
 before_install:
-    - sudo apt-get update -y -qq
-    - sudo apt-get install -y graphviz plotutils imagemagick
-    # Workaround for missing support of multiple languages in Travis;
-    # Luckily, root sees python and pip executables and can add mkdocs
-    - sudo pip install image scruffy
+    - export PATH=$HOME/.local/bin:$PATH
+    - pip install image scruffy --user `whoami`
     - npm install -g npm
 before_script :
     - npm install -g grunt-cli
+sudo: false
