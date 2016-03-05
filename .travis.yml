@@ -3,15 +3,11 @@ node_js :
     - "0.12"
     - "4"
     - "5"
-addons:
-    apt:
-        packages:
-        - graphviz
-        - plotutils
-        - imagemagick
 python:
     - "2.7"
 before_install:
+    - sudo apt-get update -y -qq
+    - sudo apt-get install -y graphviz plotutils imagemagick
     - export PATH=$HOME/.local/bin:$PATH
     - pip install image scruffy --user `whoami`
     - npm install -g npm
