@@ -1,7 +1,7 @@
 {
   "name": "grunt-scruffy",
   "description": "Grunt task to generate images from yuml diagram sources by scruffy",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/prantlf/grunt-scruffy",
   "author": {
     "name": "Ferdinand Prantl",
