@@ -1,15 +1,25 @@
-language : node_js
-node_js :
-    - "0.12"
-    - "4"
-    - "5"
-    - "6"
+language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+node_js:
+  - '8'
+  - '6'
+  - '4'
 python:
-    - "2.7"
+  - "2.7"
 before_install:
-    - sudo apt-get update -y -qq
-    - sudo apt-get install -y graphviz plotutils imagemagick
-    - sudo pip install image scruffy
-    - npm install -g npm
-before_script :
-    - npm install -g grunt-cli
+  - sudo apt-get update -y -qq
+  - sudo apt-get install -y graphviz plotutils imagemagick
+  - sudo pip install image scruffy
+  - npm install -g npm
+before_script:
+  - npm install -g grunt-cli
+  - npm prune
+after_success:
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
