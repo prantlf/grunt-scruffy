@@ -13,6 +13,7 @@ addons:
       - graphviz
       - plotutils
       - imagemagick
+      - librsvg2-bin
       - build-essential
       - g++-4.8
 env:
