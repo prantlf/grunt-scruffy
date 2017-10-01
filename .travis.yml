@@ -1,9 +1,22 @@
+sudo: false
 language: node_js
 cache:
   directories:
     - node_modules
 notifications:
   email: false
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - graphviz
+      - plotutils
+      - imagemagick
+      - build-essential
+      - g++-4.8
+env:
+  - CXX=g++-4.8
 node_js:
   - '8'
   - '6'
@@ -11,9 +24,8 @@ node_js:
 python:
   - "2.7"
 before_install:
-  - sudo apt-get update -y -qq
-  - sudo apt-get install -y graphviz plotutils imagemagick
-  - sudo pip install image scruffy
+  - pip install --user -U pip
+  - pip install --user image scruffy
   - npm install -g npm
 before_script:
   - npm install -g grunt-cli
