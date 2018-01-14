@@ -26,6 +26,7 @@ python:
   - "2.7"
 before_install:
   - pip install --user -U pip
+  - pip install --user 'django<2.0'
   - pip install --user image scruffy
   - npm install -g npm
 before_script:

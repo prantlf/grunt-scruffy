@@ -26,7 +26,15 @@ install it:
 
 1. Install [pre-requisites](https://github.com/aivarsk/scruffy/blob/master/INSTALL.md)
    of [scruffy] depending on your operating system (Python 2.7, OSX and
-   Ubuntu tested)
+   Ubuntu tested):
+
+```shell
+$ sudo apt install graphviz plotutils imagemagick librsvg2-bin \
+                   python2.7 python-pip
+$ pip install --user -U pip
+$ pip install --user 'django<2.0'
+$ pip install --user image scruffy
+```
 
 2. Install the Grunt task:
 
