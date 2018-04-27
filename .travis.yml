@@ -19,21 +19,19 @@ addons:
 env:
   - CXX=g++-4.8
 node_js:
+  - '10'
   - '8'
   - '6'
-  - '4'
 python:
   - "2.7"
 before_install:
   - pip install --user -U pip
   - pip install --user 'django<2.0'
   - pip install --user image scruffy
-  - npm install -g npm
 before_script:
   - npm install -g grunt-cli
-  - npm prune
 after_success:
-  - npm run semantic-release
+  - npm run travis-deploy-once "npm run semantic-release"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
