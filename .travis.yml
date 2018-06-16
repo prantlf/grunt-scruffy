@@ -26,7 +26,6 @@ python:
   - "2.7"
 before_install:
   - pip install --user -U pip
-  - pip install --user 'django<2.0'
   - pip install --user image scruffy
 before_script:
   - npm install -g grunt-cli
